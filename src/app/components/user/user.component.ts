@@ -36,6 +36,7 @@ export class UserComponent implements OnInit {
        this.name="Lion"
     else
       this.name="Tiger"
+      this.hobbies.push("NewHobby")
     
   }
 }
