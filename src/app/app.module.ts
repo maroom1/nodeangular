@@ -11,6 +11,7 @@ import { DataService } from './services/data.service';
 import { AboutComponent } from './components/about/about.component';
 import { DefaultComponent } from './components/default/default.component';
 import { HerosComponent } from './components/heros/heros.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 const appRoutes:Routes = [
   {path:'',component:UserComponent},
@@ -25,7 +26,8 @@ const appRoutes:Routes = [
     UserComponent,
     AboutComponent,
     DefaultComponent,
-    HerosComponent
+    HerosComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
