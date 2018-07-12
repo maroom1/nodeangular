@@ -1,0 +1,3 @@
+ng serve
+ng serve -o
+ng g component components/user => crete user component in components folder in app 
