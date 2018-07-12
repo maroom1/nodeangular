@@ -10,10 +10,12 @@ import { UserComponent } from './components/user/user.component';
 import { DataService } from './services/data.service';
 import { AboutComponent } from './components/about/about.component';
 import { DefaultComponent } from './components/default/default.component';
+import { HerosComponent } from './components/heros/heros.component';
 
 const appRoutes:Routes = [
   {path:'',component:UserComponent},
   {path:'about',component:AboutComponent},
+  {path:'heros',component:HerosComponent},
   {path:'**',component:DefaultComponent}
 ]
 
@@ -22,7 +24,8 @@ const appRoutes:Routes = [
     AppComponent,
     UserComponent,
     AboutComponent,
-    DefaultComponent
+    DefaultComponent,
+    HerosComponent
   ],
   imports: [
     BrowserModule,
