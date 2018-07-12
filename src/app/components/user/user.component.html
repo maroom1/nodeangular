@@ -7,6 +7,8 @@
 
 <br>
 <button (click)="onClick()">Click Me</button>
+<button (click)="toggleEdit()">Edit User</button>
+<div *ngIf=isEdit>
 <h1>Edit User</h1>
 <form>
   <div>
@@ -31,6 +33,7 @@
     <input type="text" [(ngModel)]="address.state" name="state">
   </div>
 </form>
+</div>
 <h1>Hobbies</h1>
 <form (submit)="addHobby(hobby.value)">
   <div>
