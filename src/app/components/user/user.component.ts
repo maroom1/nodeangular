@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service'
+import { subscribeOn } from '../../../../node_modules/rxjs/operators';
+import { Subscription } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-user',
@@ -12,8 +15,9 @@ export class UserComponent implements OnInit {
   address:Address;
   hobbies:String[];
   hello:any;
+  posts:Post[];
 
-  constructor() { 
+  constructor(private dataService:DataService) { 
     console.log("constructor ran")
   }
 
@@ -29,6 +33,10 @@ export class UserComponent implements OnInit {
     }
     this.hobbies=["read","write","print","loop"];
     this.hello="any";
+    this.dataService.getPosts().subscribe((posts) => {
+      //console.log(posts);
+      this.posts=posts;
+    });
   }
   onClick(){
     console.log("on click me button");
@@ -51,8 +59,15 @@ export class UserComponent implements OnInit {
       }
     }
   }
-}
 
+ 
+}
+interface Post{
+  title:String,
+  id:number,
+  body:String,
+  userId:number
+}
 interface Address{
   street:String,
     city:String,
